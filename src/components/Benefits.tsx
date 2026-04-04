@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from "react";
 import { Zap, Palette, ShieldCheck, DollarSign } from "lucide-react";
 
 const benefits = [
@@ -6,6 +7,59 @@ const benefits = [
   { icon: ShieldCheck, title: "Sem conhecimento técnico", description: "Você descreve, nós cuidamos de tudo." },
   { icon: DollarSign, title: "Preço acessível", description: "Qualidade premium por um preço que cabe no bolso." },
 ];
+
+const stats = [
+  { label: "Sites entregues", value: 47, suffix: "+" },
+  { label: "Prazo médio", value: 24, suffix: "h" },
+  { label: "Clientes satisfeitos", value: 98, suffix: "%" },
+  { label: "Anos de experiência", value: 3, suffix: "+" },
+];
+
+function useCountUp(target: number, started: boolean, duration = 1500) {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    if (!started) return;
+    let start = 0;
+    const step = Math.ceil(target / (duration / 16));
+    const timer = setInterval(() => {
+      start += step;
+      if (start >= target) {
+        setCount(target);
+        clearInterval(timer);
+      } else {
+        setCount(start);
+      }
+    }, 16);
+    return () => clearInterval(timer);
+  }, [started, target, duration]);
+
+  return count;
+}
+
+function StatCard({ label, value, suffix }: { label: string; value: number; suffix: string }) {
+  const [started, setStarted] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+  const count = useCountUp(value, started);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) setStarted(true); },
+      { threshold: 0.5 }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div ref={ref} className="text-center p-6 rounded-2xl border border-border bg-secondary/30">
+      <p className="text-4xl font-heading font-extrabold text-foreground">
+        {count}{suffix}
+      </p>
+      <p className="text-sm text-muted-foreground mt-1">{label}</p>
+    </div>
+  );
+}
 
 const Benefits = () => {
   return (
@@ -18,6 +72,13 @@ const Benefits = () => {
           <h2 className="text-3xl sm:text-4xl font-heading font-bold tracking-tight text-foreground">
             Tudo o que você precisa
           </h2>
+        </div>
+
+        {/* CONTADORES */}
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-12">
+          {stats.map((s) => (
+            <StatCard key={s.label} label={s.label} value={s.value} suffix={s.suffix} />
+          ))}
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
