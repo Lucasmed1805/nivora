@@ -1,11 +1,11 @@
 import { useState } from "react";
-import niveraImg from "../assets/nizora.png";
+import niveraImg from "../assets/nizorax.png";
 import tccImg from "../assets/tcc.png";
 import barbeariaImg from "../assets/barbearia.png";
 
 const sites = [
   {
-    nome: "Nizora",
+    nome: "Nizorax",
     desc: "Plataforma moderna para criação de sites profissionais",
     tag: "SaaS",
     img: niveraImg,

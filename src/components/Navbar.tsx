@@ -18,7 +18,7 @@ const Navbar = () => {
     const numero = "5581974008092"; // 🔥 COLOCA SEU NÚMERO AQUI
 
     const mensagem =
-      "Olá, vim pelo site da Nizora e quero criar um site.";
+      "Olá, vim pelo site da Nizorax e quero criar um site.";
 
     const url = `https://wa.me/${numero}?text=${encodeURIComponent(
       mensagem
@@ -31,7 +31,7 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border/50">
       <div className="max-w-6xl mx-auto flex items-center justify-between h-16 px-6">
         <span className="font-heading font-bold text-xl tracking-tight text-foreground">
-          Nizora
+          Nizorax
         </span>
 
         {/* Desktop */}

@@ -33,7 +33,7 @@ export default function ProvaSocial() {
             Quem usa, recomenda
           </h2>
           <p className="text-muted-foreground mt-3 text-sm">
-            Negócios reais já estão crescendo com a Nizora
+            Negócios reais já estão crescendo com a Nizorax
           </p>
         </div>
 

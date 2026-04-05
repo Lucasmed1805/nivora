@@ -3,7 +3,7 @@ import { ArrowRight, Clock, ShieldCheck, Star } from "lucide-react";
 const CTA = () => {
   const enviarWhatsApp = () => {
     const numero = "5581974008092";
-    const mensagem = "Olá, vim pelo site da Nizora e quero criar um site.";
+    const mensagem = "Olá, vim pelo site da Nizorax e quero criar um site.";
     const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
     window.open(url, "_blank");
   };
