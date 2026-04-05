@@ -67,7 +67,7 @@ const Benefits = () => {
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-16">
           <p className="text-sm font-medium tracking-premium uppercase text-muted-foreground mb-3">
-            Por que a Nivora
+            Por que a Nizora
           </p>
           <h2 className="text-3xl sm:text-4xl font-heading font-bold tracking-tight text-foreground">
             Tudo o que você precisa

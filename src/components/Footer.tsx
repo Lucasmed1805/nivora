@@ -6,7 +6,7 @@ return ( <footer className="bg-zinc-950 text-gray-400 mt-20 border-t border-zinc
     
     {/* LOGO */}
     <div>
-      <h2 className="text-white text-xl font-bold mb-3">Nivora</h2>
+      <h2 className="text-white text-xl font-bold mb-3">Nizora</h2>
       <p className="text-sm leading-relaxed">
         Criamos sites modernos para ajudar seu negócio a crescer online e atrair clientes todos os dias.
       </p>
@@ -29,7 +29,7 @@ return ( <footer className="bg-zinc-950 text-gray-400 mt-20 border-t border-zinc
       <ul className="space-y-2 text-sm">
         <li>📞 (81) 97400-8092</li>
         <li>📧 lucas.med1805@gmail.com</li>
-        <li>📷 @nivora</li>
+        <li>📷 @nizora</li>
       </ul>
     </div>
 
@@ -37,7 +37,7 @@ return ( <footer className="bg-zinc-950 text-gray-400 mt-20 border-t border-zinc
 
   {/* LINHA FINAL */}
   <div className="text-center text-sm border-t border-zinc-800 py-6">
-    © {new Date().getFullYear()} Nivora. Todos os direitos reservados.
+    © {new Date().getFullYear()} Nizora. Todos os direitos reservados.
   </div>
 
 </footer>
